@@ -3,3 +3,9 @@ module(
     version = "0.0.1",
     bazel_compatibility = [">=7.4.0"],
 )
+
+bazel_dep(name = "example_repo", version = "0.0.1")
+local_path_override(
+    module_name = "example_repo",
+    path = "example_repo",
+)
