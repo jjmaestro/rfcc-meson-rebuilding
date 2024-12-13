@@ -7,3 +7,6 @@
 # have a rather mininal footprint:
 # https://github.com/search?type=code&q=NOT+is%3Afork+path%3A*.MODULE.bazel
 *.MODULE.bazel linguist-language=Starlark
+
+# Mark everything in logs/ as generated
+logs/** linguist-generated=true

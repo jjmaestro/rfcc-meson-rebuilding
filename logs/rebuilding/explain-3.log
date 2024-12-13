@@ -1,0 +1,2 @@
+Build options: --verbose_failures --verbose_explanations --sandbox_debug --explain=logs/rebuilding/explain-3.log --execution_log_json_file=logs/rebuilding/execution_log-3.json
+Executing action 'BazelWorkspaceStatusAction stable-status.txt': unconditional execution is requested.

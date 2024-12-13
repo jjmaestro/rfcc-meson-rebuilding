@@ -1,0 +1,368 @@
+# /Users/jjmaestro/Work/BAZEL/repros/rfcc-meson-rebuilding/example/BUILD:8:6
+meson(
+  name = "meson",
+  lib_source = "@example_repo//:example_repo",
+  out_binaries = ["example"],
+)
+# Rule meson instantiated at (most recent call last):
+#   /Users/jjmaestro/Work/BAZEL/repros/rfcc-meson-rebuilding/example/BUILD:8:6 in <toplevel>
+# Rule meson defined at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_foreign_cc~/foreign_cc/meson.bzl:184:13 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/build_defs/build_info/BUILD:20:20
+bazel_cc_build_info(
+  name = "cc_build_info",
+)
+# Rule cc_build_info instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/build_defs/build_info/BUILD:20:20 in <toplevel>
+# Rule bazel_cc_build_info defined at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/build_defs/build_info/bazel_cc_build_info.bzl:65:27 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:58:19
+cc_toolchain_alias(
+  name = "current_cc_toolchain",
+)
+# Rule current_cc_toolchain instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:58:19 in <toplevel>
+# Rule cc_toolchain_alias defined at (most recent call last):
+#   /virtual_builtins_bzl/common/cc/cc_toolchain_alias.bzl:45:26 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:144:10
+filegroup(
+  name = "interface_library_builder",
+  srcs = ["@bazel_tools//tools/cpp:build_interface_so"],
+)
+# Rule interface_library_builder instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:144:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:149:10
+filegroup(
+  name = "link_dynamic_library",
+  srcs = ["@bazel_tools//tools/cpp:link_dynamic_library.sh"],
+)
+# Rule link_dynamic_library instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:149:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:119:6
+alias(
+  name = "toolchain",
+  actual = "@@bazel_tools~cc_configure_extension~local_config_cc//:toolchain",
+)
+# Rule toolchain instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:119:6 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:20:15
+toolchain_type(
+  name = "toolchain_type",
+)
+# Rule toolchain_type instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/cpp/BUILD:20:15 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/objc/BUILD:26:13
+xcode_config(
+  name = "host_xcodes",
+)
+# Rule host_xcodes instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools/tools/objc/BUILD:26:13 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:165:13
+cc_toolchain(
+  name = "cc-compiler-armeabi-v7a",
+  tags = ["__CC_RULES_MIGRATION_DO_NOT_USE_WILL_BREAK__"],
+  generator_name = "cc-compiler-armeabi-v7a",
+  generator_function = "cc_toolchain",
+  generator_location = "/private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:165:13",
+  toolchain_identifier = "stub_armeabi-v7a",
+  all_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  compiler_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  strip_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  objcopy_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  as_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  ar_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  linker_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  dwp_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  supports_param_files = True,
+  toolchain_config = "@@bazel_tools~cc_configure_extension~local_config_cc//:stub_armeabi-v7a",
+)
+# Rule cc-compiler-armeabi-v7a instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:165:13 in <toplevel>
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_cc~/cc/defs.bzl:143:24                                    in cc_toolchain
+#   /virtual_builtins_bzl/common/cc/cc_toolchain_wrapper.bzl:27:26                                                                              in cc_toolchain
+# Rule cc_toolchain defined at (most recent call last):
+#   /virtual_builtins_bzl/common/cc/cc_toolchain_exec.bzl:20:33 in <toplevel>
+#   /virtual_builtins_bzl/common/cc/cc_toolchain.bzl:74:16      in make_cc_toolchain
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:82:13
+cc_toolchain(
+  name = "cc-compiler-darwin_arm64",
+  tags = ["__CC_RULES_MIGRATION_DO_NOT_USE_WILL_BREAK__"],
+  generator_name = "cc-compiler-darwin_arm64",
+  generator_function = "cc_toolchain",
+  generator_location = "/private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:82:13",
+  toolchain_identifier = "local",
+  all_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:compiler_deps",
+  compiler_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:compiler_deps",
+  strip_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  objcopy_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  as_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:compiler_deps",
+  ar_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:compiler_deps",
+  linker_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:compiler_deps",
+  dwp_files = "@@bazel_tools~cc_configure_extension~local_config_cc//:empty",
+  module_map = "@@bazel_tools~cc_configure_extension~local_config_cc//:module.modulemap",
+  supports_param_files = True,
+  supports_header_parsing = True,
+  toolchain_config = "@@bazel_tools~cc_configure_extension~local_config_cc//:local",
+)
+# Rule cc-compiler-darwin_arm64 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:82:13 in <toplevel>
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_cc~/cc/defs.bzl:143:24                                   in cc_toolchain
+#   /virtual_builtins_bzl/common/cc/cc_toolchain_wrapper.bzl:27:26                                                                             in cc_toolchain
+# Rule cc_toolchain defined at (most recent call last):
+#   /virtual_builtins_bzl/common/cc/cc_toolchain_exec.bzl:20:33 in <toplevel>
+#   /virtual_builtins_bzl/common/cc/cc_toolchain.bzl:74:16      in make_cc_toolchain
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:52:10
+filegroup(
+  name = "cc_wrapper",
+  srcs = ["@@bazel_tools~cc_configure_extension~local_config_cc//:cc_wrapper.sh"],
+)
+# Rule cc_wrapper instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:52:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:62:10
+filegroup(
+  name = "compiler_deps",
+  srcs = ["@@bazel_tools~cc_configure_extension~local_config_cc//:builtin_include_directory_paths", "@@bazel_tools~cc_configure_extension~local_config_cc//:cc_wrapper", "@@bazel_tools~cc_configure_extension~local_config_cc//:validate_static_library"],
+)
+# Rule compiler_deps instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:62:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:47:10
+filegroup(
+  name = "empty",
+  srcs = [],
+)
+# Rule empty instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:47:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:99:20
+cc_toolchain_config(
+  name = "local",
+  cpu = "darwin_arm64",
+  compiler = "clang",
+  toolchain_identifier = "local",
+  host_system_name = "local",
+  target_system_name = "local",
+  target_libc = "macosx",
+  abi_version = "local",
+  abi_libc_version = "local",
+  cxx_builtin_include_directories = ["/usr/local/include", "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include", "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks", "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/share", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"],
+  tool_paths = {"ar": "/usr/bin/libtool", "ld": "/usr/bin/ld", "llvm-cov": "None", "llvm-profdata": "None", "cpp": "/usr/bin/cpp", "gcc": "cc_wrapper.sh", "dwp": "/usr/bin/dwp", "gcov": "/usr/bin/gcov", "nm": "/usr/bin/nm", "objcopy": "/usr/bin/objcopy", "objdump": "/usr/bin/objdump", "strip": "/usr/bin/strip", "c++filt": "/usr/bin/c++filt", "parse_headers": "cc_wrapper.sh", "validate_static_library": "validate_static_library.sh"},
+  compile_flags = ["-fstack-protector", "-Wall", "-Wthread-safety", "-Wself-assign", "-Wunused-but-set-parameter", "-Wno-free-nonheap-object", "-fcolor-diagnostics", "-fno-omit-frame-pointer"],
+  dbg_compile_flags = ["-g"],
+  opt_compile_flags = ["-g0", "-O2", "-D_FORTIFY_SOURCE=1", "-DNDEBUG", "-ffunction-sections", "-fdata-sections"],
+  conly_flags = [],
+  cxx_flags = ["-std=c++14"],
+  link_flags = ["-headerpad_max_install_names"],
+  link_libs = ["-lc++", "-lm"],
+  opt_link_flags = ["-Wl,-dead_strip"],
+  unfiltered_compile_flags = ["-no-canonical-prefixes", "-Wno-builtin-macro-redefined", "-D__DATE__=\"redacted\"", "-D__TIMESTAMP__=\"redacted\"", "-D__TIME__=\"redacted\""],
+  coverage_compile_flags = ["-fprofile-instr-generate", "-fcoverage-mapping"],
+  coverage_link_flags = ["-fprofile-instr-generate"],
+  supports_start_end_lib = False,
+  extra_flags_per_feature = {"use_module_maps": ["-Xclang", "-fno-cxx-modules"]},
+)
+# Rule local instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:99:20 in <toplevel>
+# Rule cc_toolchain_config defined at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/cc_toolchain_config.bzl:1670:27 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:180:28
+armeabi_cc_toolchain_config(
+  name = "stub_armeabi-v7a",
+)
+# Rule stub_armeabi-v7a instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:180:28 in <toplevel>
+# Rule armeabi_cc_toolchain_config defined at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/armeabi_cc_toolchain_config.bzl:78:35 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:72:19
+cc_toolchain_suite(
+  name = "toolchain",
+  tags = ["__CC_RULES_MIGRATION_DO_NOT_USE_WILL_BREAK__"],
+  generator_name = "toolchain",
+  generator_function = "cc_toolchain_suite",
+  generator_location = "/private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:72:19",
+  toolchains = {"darwin_arm64|clang": "@@bazel_tools~cc_configure_extension~local_config_cc//:cc-compiler-darwin_arm64", "darwin_arm64": "@@bazel_tools~cc_configure_extension~local_config_cc//:cc-compiler-darwin_arm64", "armeabi-v7a|compiler": "@@bazel_tools~cc_configure_extension~local_config_cc//:cc-compiler-armeabi-v7a", "armeabi-v7a": "@@bazel_tools~cc_configure_extension~local_config_cc//:cc-compiler-armeabi-v7a"},
+)
+# Rule toolchain instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:72:19 in <toplevel>
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_cc~/cc/defs.bzl:155:30                                   in cc_toolchain_suite
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:57:10
+filegroup(
+  name = "validate_static_library",
+  srcs = ["@@bazel_tools~cc_configure_extension~local_config_cc//:validate_static_library.sh"],
+)
+# Rule validate_static_library instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/bazel_tools~cc_configure_extension~local_config_cc/BUILD:57:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/example_repo~/BUILD:1:10
+filegroup(
+  name = "example_repo",
+  visibility = ["//visibility:public"],
+  srcs = ["@example_repo//:BUILD", "@example_repo//:MODULE.bazel", "@example_repo//:example.cc", "@example_repo//:meson.build"],
+)
+# Rule example_repo instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/example_repo~/BUILD:1:10 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:57:17
+constraint_value(
+  name = "aarch64",
+  constraint_setting = "@platforms//cpu:cpu",
+)
+# Rule aarch64 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:57:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:14:19
+constraint_setting(
+  name = "cpu",
+)
+# Rule cpu instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:14:19 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:152:17
+constraint_value(
+  name = "s390x",
+  constraint_setting = "@platforms//cpu:cpu",
+)
+# Rule s390x instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:152:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:162:17
+constraint_value(
+  name = "x86_64",
+  constraint_setting = "@platforms//cpu:cpu",
+)
+# Rule x86_64 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/cpu/BUILD:162:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:36:17
+constraint_value(
+  name = "android",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule android instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:36:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:16:17
+constraint_value(
+  name = "freebsd",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule freebsd instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:16:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:65:17
+constraint_value(
+  name = "ios",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule ios instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:65:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:41:17
+constraint_value(
+  name = "linux",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule linux instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:41:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:76:6
+alias(
+  name = "macos",
+  actual = "@platforms//os:osx",
+)
+# Rule macos instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:76:6 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:58:17
+constraint_value(
+  name = "none",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule none instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:58:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:26:17
+constraint_value(
+  name = "openbsd",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule openbsd instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:26:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:14:19
+constraint_setting(
+  name = "os",
+)
+# Rule os instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:14:19 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:71:17
+constraint_value(
+  name = "osx",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule osx instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:71:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:96:17
+constraint_value(
+  name = "qnx",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule qnx instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:96:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:81:17
+constraint_value(
+  name = "tvos",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule tvos instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:81:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:86:17
+constraint_value(
+  name = "watchos",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule watchos instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:86:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:46:17
+constraint_value(
+  name = "windows",
+  constraint_setting = "@platforms//os:os",
+)
+# Rule windows instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/platforms/os/BUILD:46:17 in <toplevel>
+
+# /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_foreign_cc~/foreign_cc/private/framework/BUILD.bazel:9:24
+_framework_platform_info(
+  name = "platform_info",
+  visibility = ["//visibility:public"],
+  generator_name = "platform_info",
+  generator_function = "framework_platform_info",
+  generator_location = "foreign_cc/private/framework/BUILD.bazel:9:24",
+  cpu = select({"@platforms//cpu:aarch64": "aarch64", "@platforms//cpu:s390x": "s390x", "@platforms//cpu:x86_64": "x86_64", "//conditions:default": "unknown"}),
+  os = select({"@platforms//os:android": "android", "@platforms//os:freebsd": "freebsd", "@platforms//os:ios": "ios", "@platforms//os:linux": "linux", "@platforms//os:macos": "macos", "@platforms//os:none": "none", "@platforms//os:openbsd": "openbsd", "@platforms//os:qnx": "qnx", "@platforms//os:tvos": "tvos", "@platforms//os:watchos": "watchos", "@platforms//os:windows": "windows", "//conditions:default": "unknown"}),
+)
+# Rule platform_info instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_foreign_cc~/foreign_cc/private/framework/BUILD.bazel:9:24   in <toplevel>
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_foreign_cc~/foreign_cc/private/framework/platform.bzl:93:29 in framework_platform_info
+# Rule _framework_platform_info defined at (most recent call last):
+#   /private/var/tmp/_bazel_jjmaestro/3b2939be8b8bd5ef003fc854f70419e8/external/rules_foreign_cc~/foreign_cc/private/framework/platform.bzl:56:32 in <toplevel>
+

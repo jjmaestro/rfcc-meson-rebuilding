@@ -1,0 +1,15 @@
+Build options: --verbose_failures --verbose_explanations --sandbox_debug --explain=logs/rebuilding/explain-1.log --execution_log_json_file=logs/rebuilding/execution_log-1.json
+Executing action 'BazelWorkspaceStatusAction stable-status.txt': unconditional execution is requested.
+Executing action 'Writing script example/meson_foreign_cc/build_script.sh': no entry in the cache (action is new).
+Executing action 'Writing script example/meson_foreign_cc/wrapper_build_script.sh': no entry in the cache (action is new).
+Executing action 'Writing script external/rules_foreign_cc~/toolchains/private/make_tool_foreign_cc/build_script.sh [for tool]': no entry in the cache (action is new).
+Executing action 'Expanding template external/rules_foreign_cc~/toolchains/private/meson_tool [for tool]': no entry in the cache (action is new).
+Executing action 'Writing script external/rules_foreign_cc~/toolchains/private/make_tool_foreign_cc/wrapper_build_script.sh [for tool]': no entry in the cache (action is new).
+Executing action 'Creating source manifest for @@rules_foreign_cc~//toolchains/private:meson_tool [for tool]': no entry in the cache (action is new).
+Executing action 'Writing repo mapping manifest for @@rules_foreign_cc~//toolchains/private:meson_tool [for tool]': no entry in the cache (action is new).
+Executing action 'Creating runfiles tree bazel-out/darwin_arm64-opt-exec-ST-d57f47055a04/bin/external/rules_foreign_cc~/toolchains/private/meson_tool.runfiles [for tool]': no entry in the cache (action is new).
+Executing action 'BootstrapGNUMake external/rules_foreign_cc~/toolchains/private/make [for tool]': no entry in the cache (action is new).
+Executing action 'Writing script external/rules_foreign_cc~/toolchains/private/pkgconfig_tool_default_foreign_cc/wrapper_build_script.sh [for tool]': no entry in the cache (action is new).
+Executing action 'Writing script external/rules_foreign_cc~/toolchains/private/pkgconfig_tool_default_foreign_cc/build_script.sh [for tool]': no entry in the cache (action is new).
+Executing action 'BootstrapPkgConfig external/rules_foreign_cc~/toolchains/private/pkgconfig [for tool]': no entry in the cache (action is new).
+Executing action 'Foreign Cc - Meson: Building meson': no entry in the cache (action is new).
