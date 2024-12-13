@@ -1,0 +1,5 @@
+module(
+    name = "rfcc-meson-rebuilding",
+    version = "0.0.1",
+    bazel_compatibility = [">=7.4.0"],
+)
