@@ -248,3 +248,71 @@ drwxr-xr-x@  3 jjmaestro  wheel   96 14 Dec 15:02 share
 So, `3.11`seems to be the `STANDALONE_INTERPRETER`... but I thought that
 interpreter was only used to bootstrap `rules_python` and, after registering a
 Python toolchain, the registered toolchain would be used :-?
+
+I've also tried a whole bunch of "`rules_python` dogscience" but the results
+are always the same, (1) the `pyc` files appear, forcing a rebuild, and (2)
+they are always `311.pyc`:
+```diff
+diff --git a/MODULE.bazel b/MODULE.bazel
+index d800594..7fe0720 100644
+--- a/MODULE.bazel
++++ b/MODULE.bazel
+@@ -9,7 +9,7 @@ module(
+ bazel_dep(name = "bazel_features", version = "1.15.0")
+ bazel_dep(name = "bazel_skylib", version = "1.3.0")
+ bazel_dep(name = "platforms", version = "0.0.5")
+-bazel_dep(name = "rules_python", version = "0.23.1")
++bazel_dep(name = "rules_python", version = "1.0.0")
+ bazel_dep(name = "rules_shell", version = "0.3.0")
+ 
+ # Dev dependencies
+@@ -23,8 +23,8 @@ bazel_dep(name = "bazel_ci_rules", version = "1.0.0", dev_dependency = True)
+ bazel_dep(name = "rules_cc", version = "0.0.9", dev_dependency = True)
+ 
+ python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+-python.toolchain(python_version = "3.9")
+-use_repo(python, "python_3_9")
++python.toolchain(python_version = "3.13")
++use_repo(python, "python_3_13")
+ 
+ tools = use_extension("@rules_foreign_cc//foreign_cc:extensions.bzl", "tools")
+ use_repo(
+@@ -46,6 +46,6 @@ register_toolchains(
+     "@rules_foreign_cc_framework_toolchains//:all",
+     "@cmake_3.23.2_toolchains//:all",
+     "@ninja_1.12.1_toolchains//:all",
+-    "@python_3_9//:all",
++    "@python_3_13//:all",
+     "@rules_foreign_cc//toolchains:all",
+ )
+diff --git a/foreign_cc/built_tools/meson_build.bzl b/foreign_cc/built_tools/meson_build.bzl
+index 696f5ae..a2f165e 100644
+--- a/foreign_cc/built_tools/meson_build.bzl
++++ b/foreign_cc/built_tools/meson_build.bzl
+@@ -8,7 +8,11 @@ def meson_tool(name, main, data, requirements = [], **kwargs):
+         srcs = [main],
+         data = data,
+         deps = requirements,
+-        python_version = "PY3",
+         main = main,
++        precompile = "enabled",
++        precompile_invalidation_mode = "unchecked_hash",
++        precompile_source_retention = "omit_source",
++        pyc_collection = "disabled",
++        stamp = 0,
+         **kwargs
+     )
+diff --git a/toolchains/built_toolchains.bzl b/toolchains/built_toolchains.bzl
+index e517c56..aebdc23 100644
+--- a/toolchains/built_toolchains.bzl
++++ b/toolchains/built_toolchains.bzl
+@@ -20,7 +20,7 @@ exports_files(["meson.py"])
+ 
+ filegroup(
+     name = "runtime",
+-    srcs = glob(["mesonbuild/**"]),
++    srcs = glob(["mesonbuild/**"], exclude = ["__pycache__/**"]),
+     visibility = ["//visibility:public"],
+ )
+ """
+```
