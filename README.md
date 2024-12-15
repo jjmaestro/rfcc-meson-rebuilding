@@ -3,6 +3,32 @@
 Example Bazel repo to repro `rules_foreign_cc` unexpectedly rebuilding a
 `meson` target.
 
+## TL;DR
+
+This seems to be a known issue, see https://github.com/bazelbuild/rules_python/blob/727ab43107fb0b2d528140f609b873670a5c6c26/python/private/python_repository.bzl#L187-L195.
+
+The fix: https://github.com/bazel-contrib/rules_foreign_cc/pull/1343
+```diff
+diff --git a/toolchains/built_toolchains.bzl b/toolchains/built_toolchains.bzl
+index e517c56..5abe0ed 100644
+--- a/toolchains/built_toolchains.bzl
++++ b/toolchains/built_toolchains.bzl
+@@ -20,7 +20,9 @@ exports_files(["meson.py"])
+ 
+ filegroup(
+     name = "runtime",
+-    srcs = glob(["mesonbuild/**"]),
++    # NOTE: excluding __pycache__ is important to avoid rebuilding due to pyc
++    # files, see https://github.com/bazel-contrib/rules_foreign_cc/issues/1342
++    srcs = glob(["mesonbuild/**"], exclude = ["**/__pycache__/*"]),
+     visibility = ["//visibility:public"],
+ )
+ """
+```
+
+<details>
+<summary>OLD NOTES (for future reference)</summary>
+
 ## Reproducing the (unexpected) rebuilding
 
 <details open>
@@ -316,3 +342,4 @@ index e517c56..aebdc23 100644
  )
  """
 ```
+</details>
